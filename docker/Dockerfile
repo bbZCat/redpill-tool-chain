@@ -17,8 +17,8 @@ RUN cp /etc/apt/sources.list /etc/apt/sources.list.bak && \
     sed  -i "s/security.debian.org/mirrors.aliyun.com/g" /etc/apt/sources.list
 
 RUN apt-get update
-RUN apt-get install --yes --no-install-recommends ca-certificates build-essential git libssl-dev 
-RUN apt-get install --yes curl cpio bspatch vim gettext bc bison flex dosfstools kmod
+RUN apt-get install --yes ca-certificates build-essential 
+RUN apt-get install --yes curl cpio bspatch vim gettext bc bison flex dosfstools kmod git libssl-dev 
 RUN rm -rf /var/lib/apt/lists/* /tmp/* 
 RUN curl --progress-bar --output /usr/bin/jq --location https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64
 RUN chmod +x /usr/bin/jq
